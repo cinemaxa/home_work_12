@@ -1,238 +1,554 @@
-/* 
-&display=swap
-&subset=cyrillic-ext 
-*/
+@import "null.css";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 
-/* ОБНУЛЕНИЕ СТИЛЕЙ */
-*,
-*::before,
-*::after {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	box-sizing: border-box;
-}
-li {
-	list-style: none;
-}
-a,
-a:visited {
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: none;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: inherit;
-	font-size: inherit;
-}
-img {
-	vertical-align: top;
-}
-html,
-body {
-	height: 100%;
-}
-html {
-	font-size: 16px; /* по умолчанию */
+[class*="__container"] {
+  margin: 0 auto;
+  max-width: 1020px;
+  padding: 0px 15px;
 }
 body {
-	line-height: 1;
-	/* color: #000; */
-	/* font-family:""; */
-	overflow-x: hidden;
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #000;
 }
 .wrapper {
-	min-height: 100%;
+  margin: 0 auto;
+  color: #000;
+  height: 100%;
+  background: url("../img/5.jpg") 0 0/ 100%  100%  no-repeat;
+  overflow: hidden;
 }
-/* ------------------------------ */
 
+.page {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 120px;
+  width: 500px;
+  max-height: 800px;
+
+  background: rgba(0, 0, 0, 0.13);
+}
 .block {
-	/* По умолчанию */
-	/* position: static; */
-	/*
-	top
-	left 
-	right
-	bottom
-	z-index
-	*/
-}
-.block__item {
-	padding: 15px;
-	color: #fff;
-	font-size: 20px;
-}
-.block__item_color-brown {
-	background-color: #794f45;
-}
-.block__item_color-purple {
-	background-color: #77608d;
-}
-.block__item_color-green {
-	background-color: #7a956b;
+  width: 20px;
+  height: 20px;
 }
 
-/* -------------- */
-
-/* Статичное положение объекта (по умолчанию) */
-/* top,left,right,bottom,z-index - не работают */
-/* position: static; */
-
-/* -------------- */
-
-/*
-Положение элемента устанавливается относительно 
-его исходного положения в коде. 
-Добавление свойств left, top, right и bottom изменяет 
-позицию элемента и сдвигает его в ту или иную сторону 
-от первоначального расположения.
-*/
-/* top,left,right,bottom,z-index - работают */
-/* position: relative; */
-
-/* -------------- */
-/*
-Элемент якобы вырывается из кода и зависайт в воздухе. 
-Он перестает влиять на остальные элементы. 
-Добавление свойств left, top, right и bottom 
-изменяет позицию элемента и сдвигает его 
-в ту или иную сторону относительно родителя 
-у колого задан параметр position: relative;
-
-1) Объект теряет свое "тело", и зависает в воздухе.
-2) Другие объекты занимают его место
-3) Объект превращается в строчный, тоесть 
-размер зависит от контента в нем
-4) Объект позиционируется обносительно первого родителя,
-для которого указано position: relative;
-5) Необходимо сопровождать свойствами top,left,right,bottom
-
-*/
-/* top,left,right,bottom,z-index - работают */
-/* position: absolute; */
-
-/* -------------- */
-
-/*
-Элемент якобы вырывается из кода и зависайт в воздухе. 
-Фиксируется, то есть не скролится вместе с содержимым. 
-Он перестает влиять на остальные элементы. 
-Добавление свойств left, top, right и bottom изменяет позицию элемента 
-и сдвигает его в ту или иную сторону относительно окна браузера.
-*/
-
-/*
-1) Объект теряет свое "тело", и зависает в воздухе.
-2) Другие объекты занимают его место
-3) Объект превращается в строчный, тоесть 
-размер зависит от контента в нем
-4) Объект позиционируется обносительно окна браузера
-5) Необходимо сопровождать свойствами top,left,right,bottom
-
-*/
-
-/* top,left,right,bottom,z-index - работают */
-/* position: fixed; */
-
-/* -------------- */
-
-/*
-Это гибридное сочетание значений static и fixed. 
-Изначально єлемент ведет себя как static 
-но после того как скролл доходит до его границы он становиться 
-fixed и прилипает к указанной позиции top или bottom.
-*/
-
-/* top,left,right,bottom,z-index - работают */
-/* position: sticky; */
-
-/* -------------- */
-
-/*
-Каждый элемент может находиться как ниже, 
-так и выше других объектов веб-страницы, 
-их размещением по z-оси и управляет z-index. 
-Это свойство работает только для элементов, 
-у которых значение position отличное от static.
-*/
-
-/* z-index: auto; */
-
-/* -------------- */
-/*
- Свойства позиционирования,
-можно указавать px, %, другие ед.
-top
-left
-right
-bottom
-*/
-
-/* -------------- */
-
-/* Практика */
-/*
-.list {
+/* -----цветные блоки---- */
+.block-pink {
+  background: rgb(255, 112, 112);
 }
-.list__item {
-	position: relative;
-	padding: 0px 0px 0px 25px;
+.block-dark-pink {
+  background: rgb(150, 65, 65);
 }
-.list__item::before {
-	content: "";
-	background: url("../img/icon.png") 0 0 no-repeat;
-	width: 25px;
-	height: 25px;
-	position: absolute;
-	top: -6px;
-	left: 0px;
+.block-light-pink {
+  background: rgb(255, 201, 201);
 }
-.list__item:not(:last-child) {
-	margin: 0px 0px 10px 0px;
+.block-gray {
+  background: rgb(87, 87, 87);
 }
-.header {
-	background-color: #7a956b;
-	padding: 20px;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 100;
+.block-brown {
+  background: rgb(90, 26, 26);
 }
-.main {
-	padding: 30px 0px 0px 0px;
+.block-red {
+  background: rgb(150, 8, 62);
 }
-.image {
-	position: relative;
-	display: inline-block;
+.block-pig {
+  width: 40px;
+  height: 40px;
+  background: rgba(236, 138, 215, 0.397);
 }
-.image::before {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.5);
+.block-skiey {
+  background: rgb(140, 190, 255);
 }
-.image:hover::before {
-	opacity: 0;
+.block-green {
+  background: rgb(4, 90, 69);
 }
-.image__item {
-	width: 200px;
+.block-light-green {
+  background: rgb(33, 189, 137);
 }
-*/
 
-.test {
-	background: #f5f5f5;
-	padding: 110px 30px;
-	position: relative;
-	background: url("../img/blob.png") right -489px no-repeat;
+/* ---------------------------- */
+.tansiro {
+  position: absolute;
+  transform: translate(15%, 25%) scale(0.5);
+  z-index: 6;
+}
+
+.row-one > .block {
+  width: 180px;
+}
+
+.row-two > .block-pink {
+  position: absolute;
+  width: 100px;
+  transform: translate(-40px, 0px);
+  box-shadow: 120px 0px 0px 0px rgb(255, 112, 112),
+    160px 0px 0px 0px rgb(255, 112, 112);
+}
+.row-two > .block-dark-pink {
+  /*   position: absolute; */
+  transform: translate(60px, 0px);
+}
+.row-three {
+  /*    position: absolute; */
+}
+.row-three > .block-pink {
+  width: 100px;
+  position: absolute;
+  transform: translate(-60px, 0px);
+  box-shadow: 140px 0px 0px 0px rgb(255, 112, 112),
+    200px 0px 0px 0px rgb(255, 112, 112);
+}
+
+.row-three > .block-dark-pink {
+  transform: translate(40px, 0px);
+  box-shadow: 20px 0px 0px 0px rgb(150, 65, 65),
+    60px 0px 0px 0px rgb(150, 65, 65), 80px 0px 0px 0px rgb(150, 65, 65),
+    100px 0px 0px 0px rgb(150, 65, 65), 120px 0px 0px 0px rgb(150, 65, 65);
+}
+.row-four {
+  /*   position: relative; */
+}
+.row-four > .block-pink {
+  position: absolute;
+  transform: translate(-60px, 0px);
+  box-shadow: 20px 0px 0px 0px rgb(255, 112, 112),
+    80px 0px 0px 0px rgb(255, 112, 112), 220px 0px 0px 0px rgb(255, 112, 112),
+    260px 0px 0px 0px rgb(255, 112, 112), 280px 0px 0px 0px rgb(255, 112, 112);
+}
+.row-four > .block-dark-pink {
+  transform: translate(-20px, 0px);
+  box-shadow: 20px 0px 0px 0px rgb(150, 65, 65),
+    60px 0px 0px 0px rgb(150, 65, 65), 80px 0px 0px 0px rgb(150, 65, 65),
+    100px 0px 0px 0px rgb(150, 65, 65), 120px 0px 0px 0px rgb(150, 65, 65),
+    140px 0px 0px 0px rgb(150, 65, 65), 160px 0px 0px 0px rgb(150, 65, 65),
+    200px 0px 0px 0px rgb(150, 65, 65);
+}
+.row-five > .block-pink {
+  position: absolute;
+  transform: translate(-60px, 0px);
+  box-shadow: 280px 0px 0px 0px rgb(255, 112, 112);
+}
+.row-five > .block-dark-pink {
+  width: 260px;
+  transform: translate(-40px, 0px);
+}
+
+.row-six > .block-pink {
+  position: absolute;
+  transform: translate(-60px, 0px);
+  box-shadow: 20px 0px 0px 0px rgb(255, 112, 112),
+    260px 0px 0px 0px rgb(255, 112, 112), 280px 0px 0px 0px rgb(255, 112, 112);
+}
+
+.row-six > .block-dark-pink {
+  width: 220px;
+  transform: translate(-20px, 0px);
+}
+
+.row-seven > .block-pink {
+  position: absolute;
+  transform: translate(-80px, 0px);
+  box-shadow: 20px 0px 0px 0px rgb(255, 112, 112),
+    200px 0px 0px 0px rgb(255, 112, 112), 220px 0px 0px 0px rgb(255, 112, 112),
+    300px 0px 0px 0px rgb(255, 112, 112), 320px 0px 0px 0px rgb(255, 112, 112);
+}
+
+.row-seven > .block-dark-pink {
+  position: absolute;
+  width: 60px;
+  transform: translate(-40px, 0px);
+  box-shadow: 200px 0px 0px 0px rgb(150, 65, 65);
+}
+.row-seven > .block-light-pink {
+  width: 100px;
+  transform: translate(20px, 0px);
+}
+.row-eight > .block-pink {
+  position: absolute;
+  transform: translate(-80px, 0px);
+  box-shadow: 180px 0px 0px 0px rgb(255, 112, 112),
+    220px 0px 0px 0px rgb(255, 112, 112), 240px 0px 0px 0px rgb(255, 112, 112),
+    320px 0px 0px 0px rgb(255, 112, 112);
+  z-index: 2;
+}
+
+.row-eight > .block-dark-pink {
+  position: absolute;
+  width: 60px;
+  transform: translate(-60px, 0px);
+  box-shadow: 240px 0px 0px 0px rgb(150, 65, 65);
+}
+.row-eight > .block-light-pink {
+  width: 140px;
+  transform: translate(0px, 0px);
+}
+
+.row-nine > .block-pink {
+  position: absolute;
+  transform: translate(-80px, 0px);
+  box-shadow: 180px 0px 0px 0px rgb(255, 112, 112),
+    220px 0px 0px 0px rgb(255, 112, 112), 240px 0px 0px 0px rgb(255, 112, 112),
+    320px 0px 0px 0px rgb(255, 112, 112);
+  /* z-index: 2; */
+}
+
+.row-nine > .block-dark-pink {
+  position: absolute;
+  transform: translate(-60px, 0px);
+  box-shadow: 40px 0px 0px 0px rgb(150, 65, 65),
+    240px 0px 0px 0px rgb(150, 65, 65), 280px 0px 0px 0px rgb(150, 65, 65);
+}
+.row-nine > .block-light-pink {
+  position: absolute;
+  width: 180px;
+  transform: translate(0px, 0px);
+}
+.row-nine > .block-gray {
+  position: absolute;
+  box-shadow: 240px 0px 0px 0px rgb(87, 87, 87);
+  transform: translate(-40px, 0px);
+}
+.row-nine > .block-brown {
+  width: 40px;
+  transform: translate(20px, 0px);
+  box-shadow: 100px 0px 0px 0px rgb(90, 26, 26);
+}
+
+.row-ten > .block-light-pink {
+  position: absolute;
+  width: 280px;
+  transform: translate(-40px, 0px);
+}
+.row-ten > .block-gray {
+  position: absolute;
+  box-shadow: 40px 0px 0px 0px rgb(87, 87, 87),
+    240px 0px 0px 0px rgb(87, 87, 87), 280px 0px 0px 0px rgb(87, 87, 87);
+  transform: translate(-60px, 0px);
+}
+.row-ten > .block-red {
+  width: 40px;
+  box-shadow: 100px 0px 0px 0px rgb(150, 8, 62);
+  transform: translate(20px, 0px);
+}
+
+.row-eleven > .block-pig {
+  position: absolute;
+  z-index: 4;
+  transform: translate(0px, 0px);
+  box-shadow: 140px 0px 0px 0px rgba(236, 138, 215, 0.397);
+}
+.row-eleven > .block-gray {
+  position: absolute;
+  width: 40px;
+  transform: translate(-40px, 0px);
+  box-shadow: 220px 0px 0px 0px rgb(87, 87, 87);
+}
+.row-eleven > .block-light-pink {
+  position: absolute;
+  width: 180px;
+}
+.row-twelve > .block-skiey {
+  transform: translate(-40px, 20px);
+  box-shadow: 240px 0px 0px 0px rgb(140, 190, 255);
+}
+
+.row-twelve > .block-gray {
+  transform: translate(-20px, 0px);
+  position: absolute;
+  box-shadow: 200px 0px 0px 0px rgb(87, 87, 87);
+}
+.row-twelve > .block-light-pink {
+  width: 180px;
+}
+
+.row-thirteen > .block-red {
+  position: absolute;
+  transform: translate(-40px, 0px);
+  box-shadow: 240px 0px 0px 0px rgb(150, 8, 62);
+}
+
+.row-thirteen > .block-dark-pink {
+  position: absolute;
+  transform: translate(-20px, 0px);
+  box-shadow: 200px 0px 0px 0px rgb(150, 65, 65);
+}
+
+.row-thirteen > .block-gray {
+  width: 180px;
+}
+
+.row-fourteen > .block-green {
+  position: absolute;
+  width: 40px;
+  transform: translate(20px, 0px);
+  box-shadow: 100px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-fourteen > .block-skiey {
+  width: 60px;
+  transform: translate(60px, 0px);
+}
+
+.row-fifteen > .block-green {
+  position: absolute;
+  width: 60px;
+  box-shadow: 120px 0px 0px 0px rgb(4, 90, 69);
+}
+
+.row-fifteen > .block-dark-pink {
+  width: 60px;
+  transform: translate(60px, 0px);
+  position: absolute;
+}
+.row-fifteen > .block-skiey {
+  transform: translate(80px, 0px);
+
+  box-shadow: 0px 40px 0px 0px rgb(140, 190, 255),
+    0px 80px 0px 0px rgb(140, 190, 255);
+}
+
+.row-sixteen > .block-green {
+  position: absolute;
+  width: 80px;
+  transform: translate(-20px, 0px);
+  box-shadow: 140px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-sixteen > .block-light-green {
+  position: absolute;
+  transform: translate(20px, 0px);
+  box-shadow: 120px 0px 0px 0px rgb(33, 189, 137);
+}
+
+.row-sixteen > .block-dark-pink {
+  width: 60px;
+  transform: translate(60px, 0px);
+}
+
+.row-seventeen > .block-green {
+  position: absolute;
+  width: 80px;
+  transform: translate(-20px, 0px);
+  box-shadow: 140px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-seventeen > .block-light-green {
+  position: absolute;
+  transform: translate(0px, 0px);
+  box-shadow: 160px 0px 0px 0px rgb(33, 189, 137);
+}
+
+.row-seventeen > .block-dark-pink {
+  transform: translate(60px, 0px);
+  box-shadow: 40px 0px 0px 0px rgb(150, 65, 65);
+}
+
+.row-eighteen > .block-green {
+  position: absolute;
+  width: 100px;
+  transform: translate(-40px, 0px);
+  box-shadow: 160px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-eighteen > .block-light-green {
+  position: absolute;
+  transform: translate(20px, 0px);
+  box-shadow: 120px 0px 0px 0px rgb(33, 189, 137);
+}
+
+.row-eighteen > .block-dark-pink {
+  width: 60px;
+  transform: translate(60px, 0px);
+}
+
+.row-nineteen > .block-green {
+  position: absolute;
+  width: 100px;
+  transform: translate(-40px, 0px);
+  box-shadow: 160px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-nineteen > .block-light-green {
+  position: absolute;
+  transform: translate(-20px, 0px);
+  box-shadow: 200px 0px 0px 0px rgb(33, 189, 137);
+}
+
+.row-nineteen > .block-dark-pink {
+  transform: translate(60px, 0px);
+  box-shadow: 40px 0px 0px 0px rgb(150, 65, 65);
+}
+
+.row-twenty > .block-green {
+  position: absolute;
+  width: 120px;
+  transform: translate(-60px, 0px);
+  box-shadow: 180px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-twenty > .block-light-green {
+  position: absolute;
+  transform: translate(-40px, 0px);
+  box-shadow: 60px 0px 0px 0px rgb(33, 189, 137),
+    180px 0px 0px 0px rgb(33, 189, 137), 240px 0px 0px 0px rgb(33, 189, 137);
+}
+
+.row-twenty > .block-dark-pink {
+  width: 60px;
+  transform: translate(60px, 0px);
+}
+
+.row-twenty-one > .block-green {
+  width: 100px;
+  position: absolute;
+  transform: translate(-60px, 0px);
+  box-shadow: 200px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-twenty-one > .block-light-green {
+  transform: translate(-20px, 0px);
+  position: absolute;
+  box-shadow: 200px 0px 0px 0px rgb(33, 189, 137);
+}
+
+.row-twenty-one > .block-skiey {
+  width: 100px;
+  transform: translate(40px, 0px);
+}
+.row-twenty-two > .block-green {
+  width: 100px;
+  position: absolute;
+  transform: translate(-60px, 0px);
+  box-shadow: 200px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-twenty-two > .block-dark-pink {
+  width: 100px;
+  transform: translate(40px, 0px);
+}
+
+.row-twenty-three > .block-gray {
+  position: absolute;
+  transform: translate(-60px, 0px);
+  box-shadow: 280px 0px 0px 0px rgb(87, 87, 87);
+}
+
+.row-twenty-three > .block-green {
+  position: absolute;
+  width: 60px;
+  transform: translate(-20px, 0px);
+  box-shadow: 160px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-twenty-three > .block-dark-pink {
+  width: 100px;
+  transform: translate(40px, 0px);
+}
+.row-twenty-three > .block-light-green {
+  position: absolute;
+  transform: translate(0px, 0px);
+}
+
+.row-twenty-four > .block-gray {
+  position: absolute;
+  transform: translate(-40px, 0px);
+  box-shadow: 240px 0px 0px 0px rgb(87, 87, 87);
+}
+.row-twenty-four > .block-green {
+  position: absolute;
+  width: 60px;
+  transform: translate(-20px, 0px);
+  box-shadow: 160px 0px 0px 0px rgb(4, 90, 69);
+}
+
+.row-twenty-four > .block-light-green {
+  position: absolute;
+  transform: translate(160px, 0px);
+}
+.row-twenty-four > .block-dark-pink {
+  width: 100px;
+  transform: translate(40px, 0px);
+}
+
+.row-twenty-five > .block-green {
+  position: absolute;
+  width: 40px;
+  transform: translate(-20px, 0px);
+  box-shadow: 20px 0px 0px 0px rgb(4, 90, 69), 160px 0px 0px 0px rgb(4, 90, 69);
+}
+.row-twenty-five > .block-dark-pink {
+  width: 100px;
+  transform: translate(40px, 0px);
+}
+
+.row-twenty-six > .block-dark-pink {
+  width: 80px;
+  transform: translate(0px, 0px);
+  box-shadow: 100px 0px 0px 0px rgb(150, 65, 65);
+}
+.row-twenty-seven > .block-dark-pink {
+  width: 80px;
+  transform: translate(0px, 0px);
+  box-shadow: 100px 0px 0px 0px rgb(150, 65, 65);
+}
+
+.row-twenty-eight > .block-skiey {
+  width: 40px;
+  transform: translate(20px, 0px);
+  box-shadow: 100px 0px 0px 0px rgb(140, 190, 255);
+}
+.row-twenty-nine > .block-skiey {
+  width: 40px;
+  transform: translate(20px, 0px);
+  box-shadow: 100px 0px 0px 0px rgb(140, 190, 255);
+}
+
+.row-thirty > .block-dark-pink {
+  width: 40px;
+  transform: translate(20px, 0px);
+  box-shadow: 100px 0px 0px 0px rgb(150, 65, 65);
+}
+
+.rock {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: gray;
+  z-index: 5;
+  transform: translate(70px, 600px);
+}
+.rock::before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: rgb(175, 135, 135);
+  transform: translate(-74px, 0px) skew(45deg);
+}
+.rock::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: rgb(99, 96, 96);
+  transform: translate(76px, -150px) skew(-45deg);
+}
+.crag {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgb(185, 223, 241);
+  transform: translate(100px, 500px) rotate(-45deg);
+  z-index: 4;
+}
+.crag::after{
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: rgb(186, 185, 241);
+  transform: translate(90px, 100px);
+  
+}
+.rock-2{
+  width: 200px;
+  height: 250px;
+  position: absolute;
+  background: rgb(99, 96, 96);
+  transform-origin: 20px;
+  transform: translate(309px, 606px) skew(-228deg,0) rotate(-89deg);
+  z-index: 5;
+
 }
