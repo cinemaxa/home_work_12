@@ -1,6 +1,12 @@
 @import "null.css";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+[class*="__container"] {
+  margin: 0 auto;
+  max-width: 1020px;
+  padding: 0px 15px;
+}
 body {
   font-family: "Source Sans Pro", sans-serif;
   color: #000;
@@ -9,26 +15,24 @@ body {
   margin: 0 auto;
   color: #000;
   height: 100%;
-  background: url("../img/5.jpg") 0 0 / cover no-repeat;
+  background: url("../img/5.jpg") 0 0/ 100%  100%  no-repeat;
   overflow: hidden;
-}
-[class*="__container"] {
-  margin: 0 auto;
-  max-width: 1020px;
-  padding: 0px 15px;
 }
 
 .page {
+  position: relative;
   margin: 0 auto;
   margin-top: 120px;
-  width: 600px;
-  height: 800px;
+  width: 500px;
+  max-height: 800px;
+
   background: rgba(0, 0, 0, 0.13);
 }
 .block {
   width: 20px;
   height: 20px;
 }
+
 /* -----цветные блоки---- */
 .block-pink {
   background: rgb(255, 112, 112);
@@ -65,20 +69,15 @@ body {
 
 /* ---------------------------- */
 .tansiro {
-  position: relative;
-  transform: translate(35%, 15%);
-  /* margin-top: 30%; */
+  position: absolute;
+  transform: translate(15%, 25%) scale(0.5);
+  z-index: 6;
 }
 
-.row-one {
-  /*   position: absolute; */
-}
 .row-one > .block {
   width: 180px;
 }
-.row-two {
-  /*    */
-}
+
 .row-two > .block-pink {
   position: absolute;
   width: 100px;
@@ -394,8 +393,6 @@ body {
   transform: translate(60px, 0px);
 }
 
-
-
 .row-twenty-one > .block-green {
   width: 100px;
   position: absolute;
@@ -406,119 +403,152 @@ body {
   transform: translate(-20px, 0px);
   position: absolute;
   box-shadow: 200px 0px 0px 0px rgb(33, 189, 137);
-
 }
 
 .row-twenty-one > .block-skiey {
   width: 100px;
   transform: translate(40px, 0px);
- 
- 
 }
-.row-twenty-two> .block-green {
+.row-twenty-two > .block-green {
   width: 100px;
   position: absolute;
   transform: translate(-60px, 0px);
   box-shadow: 200px 0px 0px 0px rgb(4, 90, 69);
 }
-.row-twenty-two> .block-dark-pink  {
+.row-twenty-two > .block-dark-pink {
   width: 100px;
   transform: translate(40px, 0px);
-  
 }
 
-.row-twenty-three> .block-gray  {
+.row-twenty-three > .block-gray {
   position: absolute;
   transform: translate(-60px, 0px);
   box-shadow: 280px 0px 0px 0px rgb(87, 87, 87);
-  
 }
 
-.row-twenty-three> .block-green  {
+.row-twenty-three > .block-green {
   position: absolute;
   width: 60px;
   transform: translate(-20px, 0px);
   box-shadow: 160px 0px 0px 0px rgb(4, 90, 69);
-  
 }
-.row-twenty-three> .block-dark-pink  {
+.row-twenty-three > .block-dark-pink {
   width: 100px;
   transform: translate(40px, 0px);
-  
 }
- .row-twenty-three> .block-light-green  {
+.row-twenty-three > .block-light-green {
   position: absolute;
   transform: translate(0px, 0px);
-  
-} 
+}
 
-.row-twenty-four> .block-gray  {
+.row-twenty-four > .block-gray {
   position: absolute;
   transform: translate(-40px, 0px);
   box-shadow: 240px 0px 0px 0px rgb(87, 87, 87);
-  
 }
-.row-twenty-four> .block-green  {
+.row-twenty-four > .block-green {
   position: absolute;
   width: 60px;
   transform: translate(-20px, 0px);
   box-shadow: 160px 0px 0px 0px rgb(4, 90, 69);
-  
 }
 
-.row-twenty-four> .block-light-green  {
+.row-twenty-four > .block-light-green {
   position: absolute;
   transform: translate(160px, 0px);
-  
 }
-.row-twenty-four> .block-dark-pink  {
+.row-twenty-four > .block-dark-pink {
   width: 100px;
   transform: translate(40px, 0px);
-  
 }
 
-.row-twenty-five> .block-green  {
+.row-twenty-five > .block-green {
   position: absolute;
   width: 40px;
   transform: translate(-20px, 0px);
   box-shadow: 20px 0px 0px 0px rgb(4, 90, 69), 160px 0px 0px 0px rgb(4, 90, 69);
-  
 }
-.row-twenty-five> .block-dark-pink  {
+.row-twenty-five > .block-dark-pink {
   width: 100px;
   transform: translate(40px, 0px);
-  
 }
 
-.row-twenty-six > .block-dark-pink  {
+.row-twenty-six > .block-dark-pink {
   width: 80px;
   transform: translate(0px, 0px);
   box-shadow: 100px 0px 0px 0px rgb(150, 65, 65);
-  
 }
-.row-twenty-seven> .block-dark-pink  {
+.row-twenty-seven > .block-dark-pink {
   width: 80px;
   transform: translate(0px, 0px);
   box-shadow: 100px 0px 0px 0px rgb(150, 65, 65);
-  
 }
 
-.row-twenty-eight> .block-skiey  {
+.row-twenty-eight > .block-skiey {
   width: 40px;
   transform: translate(20px, 0px);
   box-shadow: 100px 0px 0px 0px rgb(140, 190, 255);
-  
 }
-.row-twenty-nine> .block-skiey  {
+.row-twenty-nine > .block-skiey {
   width: 40px;
   transform: translate(20px, 0px);
   box-shadow: 100px 0px 0px 0px rgb(140, 190, 255);
-  
 }
 
-.row-thirty > .block-dark-pink  {
+.row-thirty > .block-dark-pink {
   width: 40px;
   transform: translate(20px, 0px);
   box-shadow: 100px 0px 0px 0px rgb(150, 65, 65);
+}
+
+.rock {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: gray;
+  z-index: 5;
+  transform: translate(70px, 600px);
+}
+.rock::before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: rgb(175, 135, 135);
+  transform: translate(-74px, 0px) skew(45deg);
+}
+.rock::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: rgb(99, 96, 96);
+  transform: translate(76px, -150px) skew(-45deg);
+}
+.crag {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgb(185, 223, 241);
+  transform: translate(100px, 500px) rotate(-45deg);
+  z-index: 4;
+}
+.crag::after{
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: rgb(186, 185, 241);
+  transform: translate(90px, 100px);
   
+}
+.rock-2{
+  width: 200px;
+  height: 250px;
+  position: absolute;
+  background: rgb(99, 96, 96);
+  transform-origin: 20px;
+  transform: translate(309px, 606px) skew(-228deg,0) rotate(-89deg);
+  z-index: 5;
+
 }
